@@ -1,0 +1,26 @@
+<app-search-bar (submitSearch)="onSubmitSearch($event)"></app-search-bar>
+
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="d-flex justify-content-center">
+  <span class="text-muted">{{ errorMessage }}</span>
+</div>
+
+<ng-container *ngIf="galleryItems?.length">
+  <app-gallery [items]="galleryItems"></app-gallery>
+
+  <div class="d-flex justify-content-center">
+    <ngb-pagination
+      [page]="resultsPage"
+      (pageChange)="onPageChange($event)"
+      [pageSize]="galleryItemsPerPage"
+      [collectionSize]="giphySearchResult?.pagination?.total_count"
+      [ellipses]="true"
+      [maxSize]="5"
+    ></ngb-pagination>
+  </div>
+</ng-container>
