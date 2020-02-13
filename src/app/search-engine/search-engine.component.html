@@ -10,4 +10,17 @@
   <span class="text-muted">{{ errorMessage }}</span>
 </div>
 
-<app-gallery [items]="galleryItems"></app-gallery>
+<ng-container *ngIf="galleryItems?.length">
+  <app-gallery [items]="galleryItems"></app-gallery>
+
+  <div class="d-flex justify-content-center">
+    <ngb-pagination
+      [page]="resultsPage"
+      (pageChange)="onPageChange($event)"
+      [pageSize]="galleryItemsPerPage"
+      [collectionSize]="giphySearchResult?.pagination?.total_count"
+      [ellipses]="true"
+      [maxSize]="5"
+    ></ngb-pagination>
+  </div>
+</ng-container>
