@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SearchEngineComponent } from './search-engine.component';
 
@@ -8,7 +9,8 @@ describe('SearchEngineComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchEngineComponent]
+      declarations: [SearchEngineComponent],
+      imports: [HttpClientModule]
     }).compileComponents();
   }));
 

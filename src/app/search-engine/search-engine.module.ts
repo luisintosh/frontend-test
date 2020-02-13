@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { SearchEngineRoutingModule } from './search-engine-routing.module';
 import { SearchEngineComponent } from './search-engine.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
-  declarations: [SearchEngineComponent, SearchBarComponent],
+  declarations: [SearchEngineComponent, SearchBarComponent, GalleryComponent],
   imports: [CommonModule, SearchEngineRoutingModule, FormsModule]
 })
 export class SearchEngineModule {}
