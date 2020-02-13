@@ -4,6 +4,15 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 
 const routes: Routes = [
   {
+    path: 'search',
+    loadChildren: () => import('./search-engine/search-engine.module').then(m => m.SearchEngineModule)
+  },
+  {
+    path: '',
+    redirectTo: 'search',
+    pathMatch: 'full'
+  },
+  {
     path: 'not-found',
     component: PageNotFoundComponent
   },
