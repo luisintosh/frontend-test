@@ -58,6 +58,12 @@ export class SearchEngineComponent implements OnDestroy {
 
   onSubmitSearch(value: string) {
     this.searchQuery = value;
+    this.resultsPage = 1;
+    this.search(this.searchQuery, this.resultsPage);
+  }
+
+  onPageChange(page: number) {
+    this.resultsPage = page;
     this.search(this.searchQuery, this.resultsPage);
   }
 
