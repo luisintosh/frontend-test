@@ -9,6 +9,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --config commitlint.config.js -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && ng lint",
+      "post-merge": "post-npm-install"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.0",
@@ -28,10 +35,11 @@
     "@angular/cli": "~9.0.1",
     "@angular/compiler-cli": "~9.0.0",
     "@angular/language-service": "~9.0.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "husky": "^4.2.3",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -39,7 +47,12 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "^10.0.7",
+    "npm-post-install": "0.0.2",
+    "prettier": "^1.19.1",
     "protractor": "~5.4.3",
+    "stylelint": "^13.1.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
